@@ -1,10 +1,13 @@
 
-class webserver::user {
+class webserver::user ( $home_path = '/home/ganeshhp', $usrname = 'ganeshhp', $uid) {
 
-       user { 'ganeshhp':
+       user { "$usrname":
 	  ensure   => 'present',
 	  provider => 'useradd',
-	}
+          home     => "$home_path",
+          uid      => "$uid",
+         
+ }
 
 }
 
